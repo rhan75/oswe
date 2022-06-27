@@ -1,7 +1,5 @@
-from ast import For
 import requests
 from colorama import Fore, Back, Style
-from sympy import false
 
 requests.packages.urllib3.disable_warnings(requests.packages.urllib3.exceptions.InsecureRequestWarning)
 
@@ -12,7 +10,7 @@ def format_text(title, item):
     text = Style.BRIGHT + Fore.RED + title + Fore.BLACK + section_break + item + section_break
     return text
 
-r = requests.get('https://www.seattle.gov', verify=false)
+r = requests.get('https://www.seattle.gov', verify=False)
 print(format_text('r.status_code is: ', r.status_code))
 print(format_text('r.headers is: ',r.headers))
 print(format_text('r.cookies is: ',r.cookies))
